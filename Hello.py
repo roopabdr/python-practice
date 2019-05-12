@@ -29,4 +29,40 @@
 
 z= [0,1,2,3,4,5,6,7,8,9,10]
 
-print(z[3:7])
+# print(z[3:7])
+
+a=[1,2,3]
+b=[4,5,6]
+print(zip(a,b))
+for x, y in zip(a,b):
+    x+y
+    # print(x,y)
+
+def diagonalDifference(arr):
+    right_total = 0
+    left_total = 0
+    arr_length = len(arr) - 1
+    for i,x in enumerate(arr):
+        # print('i',i)
+        for j, y in enumerate(x):
+            # print('j',j)
+            # print('arr_length',arr_length-i)
+            if j == arr_length - i and i == arr_length - i:
+                right_total += arr[i][j]
+                left_total += arr[i][j]
+            elif i == j:
+                # print('if',i,j)
+                right_total += arr[i][j]          
+            elif j == arr_length - i:
+                left_total += arr[i][j]
+                # print('elif',i,j)
+            else:
+                # print('else',j, arr_length-i)
+                continue
+    print(right_total,left_total)
+    diff = abs(right_total - left_total)
+    print(diff)
+    
+# array = [[1,2,3,4],[2,2,3,4],[3,2,3,4],[4,2,3,4]]
+array = [[11,2,4],[4,5,6],[10,8,-12]]
+diagonalDifference(array)
