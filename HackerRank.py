@@ -11,4 +11,5 @@ def plusMinus(arr):
 			zeroes = [zero for zero in arr if zero ==0]
 			print("{:.{}f}".format(len(zeroes)/arr_len,6))
 			
+			
 plusMinus(input)
