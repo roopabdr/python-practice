@@ -1,0 +1,2 @@
+use pip package manager to install third party libraries
+for example pip install pytz ----> installs world time zone third party library
