@@ -1,3 +1,9 @@
-import math
+from datetime import datetime
+import pytz
 
-print(math.factorial(4))
+utc = pytz.utc
+ist = pytz.timezone('Asia/Kolkata')
+
+now = datetime.now(tz=utc)
+ist_now = now.astimezone(ist)
+print(ist_now)
