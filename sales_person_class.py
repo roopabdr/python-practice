@@ -99,7 +99,6 @@ class SalesPerson:
             print(pant.color)
             self.total_sales += pant.price
         return round(float(self.total_sales),2)
-        # self.total_sales += [pant.price for pant in self.pants_sold]
         
     def calculate_commission(self, percentage):
         total_comission = self.total_sales * percentage
