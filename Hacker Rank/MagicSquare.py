@@ -17,18 +17,18 @@ def compute_matrix(array):
             main_diag, reverse_diag = compute_diagonal_sum(array)
 
             col1, col2, col3 = compute_column_sum(array)
-            main_diag, reverse_diag = compute_diagonal_sum(array) 
+            main_diag, reverse_diag = compute_diagonal_sum(array)
 
-            # print('here', i,j)
+            print('here', i,j)
             # print(main_diag == magic_const and i == 0 and j == 0) 
             # print(main_diag == magic_const and i == 1 and j == 1) 
             # print(main_diag == magic_const and i == 2 and j == 2) 
             # print(reverse_diag == magic_const and i == 0 and j == 2) 
             # print(reverse_diag == magic_const and i == 1 and j == 1) 
             # print(reverse_diag == magic_const and i == 2 and j == 0)
-            # print((i == 0 or j == 0) and (row1 == magic_const or col1 == magic_const), row1, col1) 
-            # print((i == 1 or j == 1) and (row2 == magic_const or col2 == magic_const), row2, col2) 
-            # print((i == 2 or j == 2) and (row3 == magic_const or col3 == magic_const), row3, col3)
+            print((i == 0 or j == 0) and (row1 == magic_const or col1 == magic_const), row1, col1) 
+            print((i == 1 or j == 1) and (row2 == magic_const or col2 == magic_const), row2, col2) 
+            print((i == 2 or j == 2) and (row3 == magic_const or col3 == magic_const), row3, col3)
 
             if row1 != magic_const and (col1 != magic_const or col2 != magic_const or col3 != magic_const):
                 if ((main_diag == magic_const and i == 0 and j == 0) 
@@ -90,12 +90,40 @@ def compute_matrix(array):
     print('final', array, 'cost', cost)
     return cost
 
+def compute_matrix2(s):
+    n = [s[i][j] for i in range(3) for j in range(3)]
+    all_n = [
+            [8, 1, 6, 3, 5, 7, 4, 9, 2],
+            [6, 1, 8, 7, 5, 3, 2, 9, 4],
+            [4, 9, 2, 3, 5, 7, 8, 1, 6],
+            [2, 9, 4, 7, 5, 3, 6, 1, 8],
+            [8, 3, 4, 1, 5, 9, 6, 7, 2],
+            [4, 3, 8, 9, 5, 1, 2, 7, 6],
+            [6, 7, 2, 1, 5, 9, 8, 3, 4],
+            [2, 7, 6, 9, 5, 1, 4, 3, 8]
+        ]
+ 
+    allsum = []
+    for l in all_n:
+        allsum.append(sum([abs(n[i]-l[i]) for i in range(9)]))
+    
+    print(min(allsum))
+
 # array = [[5,3,4], [1,5,8], [6,4,2]]
 # array = [[4,9,2],[3,5,7],[8,1,5]]
 # array = [[4,8,2],[4,5,7],[6,1,6]]
 array = [[4,5,8],[2,4,1],[1,9,7]]
-compute_matrix(array)
+# compute_matrix(array)
+compute_matrix2(array)
 # print(row1, col1)
 # print(row2, col2)
 # print(row3, col3)
 # print(main_diag, reverse_diag)
+
+# a = 1
+# b = 1
+# c= 1
+# if (a, b, c) != (1, 1, 1):
+#     print('worked')
+# else:
+#     print('something')
